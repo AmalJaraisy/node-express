@@ -13,8 +13,10 @@ app.get('/api/users', (req, res) => {
 
 // b. filter by age (must be BEFORE /api/users/:id)
 app.get('/api/users/filter', (req, res) => {
-  const minAge = req.query.minAge !== undefined ? Number(req.query.minAge) : 0;
-  const maxAge = req.query.maxAge !== undefined ? Number(req.query.maxAge) : Infinity;
+  /*const minAge = req.query.minAge !== undefined ? Number(req.query.minAge) : 0;
+  const maxAge = req.query.maxAge !== undefined ? Number(req.query.maxAge) : Infinity;*/
+    const min = Number(req.query.minAge);
+    const max = Number(req.query.maxAge);
 
   const result = users.filter(u => u.age >= minAge && u.age <= maxAge);
   res.json(result);
