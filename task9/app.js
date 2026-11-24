@@ -2,7 +2,7 @@
 const express = require('express');
 
 const app = express();
-const port = process.env.PORT || 3000;
+
 
 // Data from the course page (paste the full lines from Notion – descriptions are cut off in the screenshot)
 const products = [
@@ -53,6 +53,4 @@ app.use((req, res) => {
   res.status(404).send('<h1>resource not found</h1>');
 });
 
-app.listen(port, () => {
-  console.log(`Server listening on http://localhost:${port}`);
-});
+app.listen(3000, () => console.log("Ready on port 3000"));
