@@ -65,7 +65,7 @@ app.get('/user/:id', (req, res) => {
 });
 
 // Anything else -> 404 (always LAST)
-app.all('*', (req, res) => {
+app.use( (req, res) => {
      const users = getUsers();
   res.status(404).send('<h1>resource not found</h1>');
 });

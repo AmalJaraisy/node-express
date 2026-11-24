@@ -48,7 +48,7 @@ app.get('/api/products', (req, res) => {
 });
 
 // Anything else -> 404 (always LAST)
-app.all('/{*splat}', (req, res) => {
+app.use((req, res) => {
   res.status(404).send('<h1>resource not found</h1>');
 });
 
